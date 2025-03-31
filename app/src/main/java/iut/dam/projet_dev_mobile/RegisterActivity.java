@@ -58,7 +58,6 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        // LOG POUR DEBUG
         Log.d("REGISTER_DEBUG", "Nom: " + name + ", Email: " + email + ", Password: " + password);
 
         progressBar.setVisibility(View.VISIBLE);

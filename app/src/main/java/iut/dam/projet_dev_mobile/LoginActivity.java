@@ -20,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class    LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText emailInput, passwordInput;
     private Button loginButton;
@@ -42,7 +42,6 @@ public class    LoginActivity extends AppCompatActivity {
         authService = RetrofitClient.getInstance().create(AuthService.class);
         sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
 
-        // Vérifier si l'utilisateur est déjà connecté
         if (sharedPreferences.contains("TOKEN")) {
             goToHome();
         }
@@ -74,7 +73,6 @@ public class    LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     LoginResponse loginResponse = response.body();
 
-                    // Sauvegarde du token dans SharedPreferences
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("TOKEN", loginResponse.getToken());
                     editor.apply();

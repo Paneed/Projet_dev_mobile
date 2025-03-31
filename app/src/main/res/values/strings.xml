@@ -67,5 +67,9 @@
     <string name="no_account">Pas encore de compte ? S\'inscrire</string>
     <string name="login_success">Connexion réussie !</string>
 
-
+    <string-array name="langues_disponibles">
+        <item>Français</item>
+        <item>English</item>
+        <item>Español</item>
+    </string-array>
 </resources>

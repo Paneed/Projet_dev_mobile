@@ -43,17 +43,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Ajout de la Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Initialisation du DrawerLayout
         drawerLayout = findViewById(R.id.drawer_layout);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        // Gestion de la navigation
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -62,13 +59,23 @@ public class MainActivity extends AppCompatActivity {
 
                 if (id == R.id.nav_home) {
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                } else if (id == R.id.nav_consumption) {
-                    startActivity(new Intent(MainActivity.this, ConsumptionActivity.class));
                 } else if (id == R.id.nav_profile) {
                     startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                }else if (id == R.id.nav_habitats) {
+                    startActivity(new Intent(MainActivity.this, HabitatActivity.class));
                 } else if (id == R.id.nav_settings) {
                     startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-                } else if (id == R.id.nav_logout) {
+                } else if (id == R.id.nav_my_habitat) {
+                    startActivity(new Intent(MainActivity.this, MyHabitatActivity.class));
+                }else if (id == R.id.nav_ecocitizen) {
+                    startActivity(new Intent(MainActivity.this, EcoCitizenActivity.class));
+                }else if (id == R.id.nav_about) {
+                    androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("A propos")
+                            .setMessage("🏠 Application : PowerHome\n🔢 Version : 1.0\n👤 Développés par : Groupe 8 - Phuong, Shihong, Eléa\n📅 Année : 2025")
+                            .setPositiveButton("OK", null)
+                            .show();
+                }else if (id == R.id.nav_logout) {
                     logoutUser();
                 }
 
@@ -77,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Initialisation des composants UI
         emailInput = findViewById(R.id.email);
         passwordInput = findViewById(R.id.password);
         loginButton = findViewById(R.id.btn_login);
@@ -87,16 +93,12 @@ public class MainActivity extends AppCompatActivity {
 
         authService = RetrofitClient.getInstance().create(AuthService.class);
 
-        // Animation du logo
         logoAnimation.playAnimation();
 
-        // Gestion du clic sur le bouton de connexion
         loginButton.setOnClickListener(v -> loginUser());
 
-        // Mot de passe oublié
         forgotPasswordText.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ForgotPasswordActivity.class)));
 
-        // Création de compte
         createAccountText.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, RegisterActivity.class)));
     }
 

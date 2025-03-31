@@ -20,7 +20,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         animationView.playAnimation();
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            // Vérifier si l'utilisateur est connecté
+
 
             SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
             boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
@@ -32,6 +32,6 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
 
             finish();
-        }, 4000); // Attente de 4 secondes avant la redirection
+        }, 4000);
     }
 }

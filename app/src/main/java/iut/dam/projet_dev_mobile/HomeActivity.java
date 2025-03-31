@@ -20,43 +20,44 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Configuration de la Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Configuration du DrawerLayout
         drawerLayout = findViewById(R.id.drawer_layout);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        // Gestion de la navigation
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.nav_home) {
-                    // Déjà sur la page d'accueil
-                } else if (id == R.id.nav_consumption) {
-                    startActivity(new Intent(HomeActivity.this, ConsumptionActivity.class));
                 } else if (id == R.id.nav_profile) {
                     startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                 } else if (id == R.id.nav_settings) {
                     startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
-                } else if (id == R.id.nav_logout) {
-                    // Déconnexion de l'utilisateur
+                } else if (id == R.id.nav_my_habitat) {
+                    startActivity(new Intent(HomeActivity.this, MyHabitatActivity.class));
+                }else if (id == R.id.nav_ecocitizen) {
+                    startActivity(new Intent(HomeActivity.this, EcoCitizenActivity.class));
+                }else if (id == R.id.nav_about) {
+                    androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(HomeActivity.this);
+                    builder.setTitle("A propos")
+                            .setMessage("🏠 Application : PowerHome\n🔢 Version : 1.0\n👤 Développés par : Groupe 8 - Phuong, Shihong, Eléa\n📅 Année : 2025")
+                            .setPositiveButton("OK", null)
+                            .show();
+                }else if (id == R.id.nav_logout) {
                     SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putBoolean("isLoggedIn", false);
                     editor.apply();
 
-                    // Retourner à la page d'accueil (MainActivity)
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));
                     finish();
                 }
 
-                // Fermer le menu après un clic
                 drawerLayout.closeDrawers();
                 return true;
             }

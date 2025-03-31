@@ -7,23 +7,37 @@
         android:icon="@drawable/ic_home" />
 
     <item
-        android:id="@+id/nav_consumption"
-        android:title="Consommation"
-        android:icon="@drawable/ic_energy" />
-
-    <item
         android:id="@+id/nav_profile"
         android:title="Profil"
         android:icon="@drawable/ic_user" />
+    <item
+        android:id="@+id/nav_habitats"
+        android:title="Habitats"
+        android:icon="@drawable/ic_apartment"/>
 
     <item
         android:id="@+id/nav_settings"
         android:title="Paramètres"
         android:icon="@drawable/ic_settings" />
+    <item
+        android:id="@+id/nav_my_habitat"
+        android:title="Mon habitat"
+        android:icon="@drawable/ic_apartment" />
+    <item
+        android:id="@+id/nav_ecocitizen"
+        android:title="Éco-citoyen"
+        android:icon="@drawable/ic_calendar" />
+
+    <item
+        android:id="@+id/nav_about"
+        android:title="À propos"
+        android:icon="@drawable/ic_info" />
 
     <item
         android:id="@+id/nav_logout"
         android:title="Déconnexion"
         android:icon="@drawable/ic_logout" />
+
+
 
 </menu>

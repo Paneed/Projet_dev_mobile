@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_notif"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mes notifications"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <Switch
+            android:id="@+id/switch_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activer les notifications" />
+
+        <Switch
+            android:id="@+id/switch_alertes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recevoir des alertes"
+            android:layout_marginTop="12dp" />
+
+        <Switch
+            android:id="@+id/switch_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notifications par email"
+            android:layout_marginTop="12dp" />
+        <Switch
+            android:id="@+id/switch_offer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recevoir des nouvelles offres"
+            android:layout_marginTop="12dp" />
+    </LinearLayout>
+</LinearLayout>

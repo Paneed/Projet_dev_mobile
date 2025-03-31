@@ -7,13 +7,11 @@
     android:layout_height="match_parent"
     tools:openDrawer="start">
 
-    <!-- Contenu principal avec Toolbar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Barre d'outils -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -23,7 +21,6 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:title="Mon Application" />
 
-        <!-- Contenu de l'application -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,7 +28,6 @@
             android:gravity="center"
             android:padding="20dp">
 
-            <!-- Logo animé -->
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/logoAnimation"
                 android:layout_width="200dp"
@@ -42,7 +38,6 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp" />
 
-            <!-- Email -->
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
@@ -53,7 +48,6 @@
                 android:padding="12dp"
                 android:layout_marginBottom="10dp" />
 
-            <!-- Mot de passe -->
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -64,7 +58,6 @@
                 android:padding="12dp"
                 android:layout_marginBottom="10dp" />
 
-            <!-- Bouton de connexion -->
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
@@ -76,7 +69,6 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="10dp" />
 
-            <!-- Mot de passe oublié -->
             <TextView
                 android:id="@+id/txt_forgot_password"
                 android:layout_width="wrap_content"
@@ -88,7 +80,6 @@
                 android:clickable="true"
                 android:focusable="true" />
 
-            <!-- Créer un compte -->
             <TextView
                 android:id="@+id/txt_create_account"
                 android:layout_width="wrap_content"
@@ -101,7 +92,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Menu NavigationView -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

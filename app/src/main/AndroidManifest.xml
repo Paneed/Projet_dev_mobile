@@ -26,14 +26,16 @@
 
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".ConsumptionActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SettingsActivity"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".ForgotPasswordActivity"/>
-
-
+        <activity android:name=".HabitatActivity" />
+        <activity android:name=".MyHabitatActivity" />
+        <activity android:name=".EcoCitizenActivity" />
+        <activity android:name=".PreferencesActivity" />
+        <activity android:name=".NotificationActivity" />
 
     </application>
 
